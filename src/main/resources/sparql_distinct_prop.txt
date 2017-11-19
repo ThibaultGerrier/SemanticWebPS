@@ -1,0 +1,7 @@
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?rel
+WHERE {
+    ?subj a schema:Event .
+    ?subj ?rel ?obj
+    FILTER (STRSTARTS(str(?rel), str(schema:) ) )
+}

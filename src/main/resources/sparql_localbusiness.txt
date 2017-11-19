@@ -1,0 +1,11 @@
+PREFIX schema: <http://schema.org/>
+SELECT ?name ?opens ?closes
+WHERE {
+    ?sub a schema:LocalBusiness .
+    ?sub schema:name ?name .
+    ?sub schema:openingHoursSpecification ?hours .
+    ?hours schema:dayOfWeek "Sunday"^^<http://www.w3.org/2001/XMLSchema#string>
+    OPTIONAL { ?hours schema:closes ?closes }
+    OPTIONAL { ?hours schema:opens ?opens }
+
+}

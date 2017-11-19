@@ -1,0 +1,9 @@
+PREFIX schema: <http://schema.org/>
+SELECT ?name ?desc
+WHERE {
+    ?sub a schema:Event .
+    ?sub schema:startDate ?date .
+    ?sub schema:name ?name .
+    OPTIONAL { ?sub schema:description ?desc }
+    FILTER (?date > "2017-12-01T00:00:00Z"^^xsd:string)
+}

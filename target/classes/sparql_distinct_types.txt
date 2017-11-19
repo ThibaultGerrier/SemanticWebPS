@@ -1,0 +1,6 @@
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?type
+WHERE {
+    ?sub a ?type .
+    FILTER (STRSTARTS(str(?type), str(schema:) ) )
+}

@@ -1,0 +1,7 @@
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT (COUNT(?sub) as ?count)
+WHERE {
+    ?sub a schema:Event .
+    ?sub schema:startDate ?date .
+    FILTER (?date > "2017-12-01T00:00:00Z"^^xsd:string)
+}
